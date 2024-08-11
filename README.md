@@ -1,7 +1,8 @@
 # TREES-striver-
 <h2> striver trees playlist </h2>
 
- REPRESENTATION OF TREE IN CPP
+ 
+ <h3>REPRESENTATION OF TREE IN CPP </h3>
 
 struct node
 {
@@ -18,7 +19,7 @@ left=right=NULL;
 DEPT FIRST SEARCH 
 THERE ARE 3 TYPES OF DFS IN,PRE,POST
 
-PREORDER
+ <h3> PREORDER </h3>
 
 void preorder(root)
 {
@@ -28,7 +29,7 @@ void preorder(root)
   preorder(root->right);
 }
 
-INORDER
+<h3>INORDER</h3>
 
 void inorder(node)
 
@@ -39,7 +40,7 @@ void inorder(node)
   inorder(node->right);
 }
 
-POSTORDER
+<h3>POSTORDER</h3>
 
 void postorder
 {
@@ -50,7 +51,8 @@ void postorder
 }
 take a vector and instead of printing put it in vector and then return the vector
 
-LEVEL ORDER TRAVERSAL ONE OF THE IMP
+
+<h3>LEVEL ORDER TRAVERSAL ONE OF THE IMP</h3>
 (BFS)
 
 class Solution {
@@ -78,7 +80,7 @@ public:
     }
 };
 
-PREORDER TRAVERSAL USING ITERATION
+<h3>PREORDER TRAVERSAL USING ITERATION</h3>
 
 if(root==nullptr)return;
        stack<TreeNode*>st;
@@ -90,6 +92,34 @@ if(root==nullptr)return;
         ans.push_back(root->val);
         if(root->right) st.push(root->right);
         if(root->left) st.push(root->left);
+
+
+ <h3>Height of tree</h3> 
+
+   int maxDepth(TreeNode* root) {
+        if(root==NULL) return 0;
+        int leftdepth = maxDepth(root->left);
+        int rightdepth = maxDepth(root->right);
+        return 1+max(leftdepth,rightdepth);
+
+
+<h3>Balanced Binary Tree </h3>
+
+int findheight(TreeNode * root)
+    {
+        if(root==NULL)return 0;
+        int left= findheight(root->left);
+        int right =findheight(root->right);
+        if(left==-1 || right==-1) return -1;
+        if(abs(left-right)>1) return -1;
+        return max(left,right)+1;
+    }
+
+    bool isBalanced(TreeNode* root) {
+        if(findheight(root)==-1)return 0;
+        else
+        return 1;
+    }
 
 
 
