@@ -78,5 +78,18 @@ public:
     }
 };
 
+PREORDER TRAVERSAL USING ITERATION
+
+if(root==nullptr)return;
+       stack<TreeNode*>st;
+       st.push(root);
+       while(!st.empty())
+       {
+        root=st.top();
+        st.pop();
+        ans.push_back(root->val);
+        if(root->right) st.push(root->right);
+        if(root->left) st.push(root->left);
+
 
 
