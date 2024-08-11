@@ -114,11 +114,9 @@ int findheight(TreeNode * root)
         if(abs(left-right)>1) return -1;
         return max(left,right)+1;
     }
-
     bool isBalanced(TreeNode* root) {
         if(findheight(root)==-1)return 0;
-        else
-        return 1;
+        else return 1;
     }
 
 
