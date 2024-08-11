@@ -104,6 +104,7 @@ if(root==nullptr)return;
 
 
 <h3>Balanced Binary Tree </h3>
+// BALANCED BINARY TREE IS A TREE WHOSE LEFTMAX-RIGHMAX>1
 
 int findheight(TreeNode * root)
     {
