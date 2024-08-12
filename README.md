@@ -171,5 +171,18 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         if(left && right && value) return true;
         else return false;
     }
-
+    <h3>MAXIMUM PATH SUM </h3>
+     int findsum(TreeNode*root ,int &maxi)
+     {
+        if(root==NULL) return  0;
+        int left= max(0,findsum(root->left));
+        int right =max(0,findsum(root->right));
+        maxi=max(maxi,left+right+root->val);
+        return max(left+right)+root->val;
+     }
+     int maxPathSum(TreeNode* root) {
+        int sum=INT_MIN;
+        findsum(root,sum);
+        return sum;
+    }
 
