@@ -96,7 +96,7 @@ if(root==nullptr)return;
         if(root->left) st.push(root->left);
 
 
- <h3>Height of tree</h3> 
+ <h3>HEIGHT OF TREE</h3> 
 
    int maxDepth(TreeNode* root) {
         if(root==NULL) return 0;
@@ -105,7 +105,7 @@ if(root==nullptr)return;
         return 1+max(leftdepth,rightdepth);
 
 
-<h3>Balanced Binary Tree </h3>
+<h3>BALANCED BINARY TREE </h3>
 // BALANCED BINARY TREE IS A TREE WHOSE LEFTMAX-RIGHMAX>1
 
 int findheight(TreeNode * root)
