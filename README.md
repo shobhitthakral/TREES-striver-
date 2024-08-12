@@ -135,8 +135,7 @@ int findheight(TreeNode* root ,int &maxi)
  int diameterOfBinaryTree(TreeNode* root) {
         int diameter = 0;
         findheight(root,diameter);
-        return diameter;
-        
+        return diameter;       
     }
 <h3>ZIG ZAG LEVEL ORDER TRAVERSAL</h3>
 vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
