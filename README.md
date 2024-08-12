@@ -160,9 +160,7 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
             flag=!flag;
             ans.push_back(each);
         }
-        return ans; }
-
-             
+        return ans; }          
     <h3>SAME TREE </h3>
     bool isSameTree(TreeNode* p, TreeNode* q) {
         if(p== NULL && q==NULL) return true;
