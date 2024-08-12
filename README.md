@@ -138,5 +138,30 @@ int findheight(TreeNode* root ,int &maxi)
         return diameter;
         
     }
+<h3>ZIG ZAG LEVEL ORDER TRAVERSAL</h3>
+vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        vector<vector<int>>ans;
+        bool flag =true;
+        queue<TreeNode*>q;
+        if(root==NULL)return ans;
+        q.push(root);
+        while(!q.empty())
+        {
+            int n=q.size();
+            vector<int>each(n);
+            for(int i=0 ;i<n ; i++)
+            {
+                TreeNode *node=q.front();
+                q.pop();
+                int index= flag?i:(n-i-1);
+                each[index]=node->val;
+                if(node->left) q.push(node->left);
+                if(node->right)q.push(node->right);
+            }
+            flag=!flag;
+            ans.push_back(each);
+        }
+        return ans;
+    }
 
 
