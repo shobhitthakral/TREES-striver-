@@ -206,7 +206,6 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
             }
         }
     }
-
     // Function to add the
     // right boundary of the tree
     void addRightBoundary(TreeNode root, vector<int>& res) {
@@ -232,7 +231,6 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
             res.push_back(temp[i]);
         }
     }
-
     // Function to add the
     // leaves of the tree
     void addLeaves(TreeNode root, vector<int>& res) {
@@ -262,13 +260,11 @@ vector<int> traverseBoundary(TreeNode root)
         if (!isLeaf(root)) {
             res.push_back(root->data);
         }
-
         // Add the left boundary, leaves,
         // and right boundary in order
         addLeftBoundary(root, res);
         addLeaves(root, res);
         addRightBoundary(root, res);
-
         return res;
     }
 
