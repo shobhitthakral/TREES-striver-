@@ -17,7 +17,7 @@ left=right=NULL;
 };
 
 DEPT FIRST SEARCH 
-THERE ARE 3 TYPES OF DFS IN,PRE,POST
+THERE ARE 3 TYPES OF DFS INORDER,PREORDER,POSTORDER
 
  <h3> PREORDER </h3>
 
@@ -50,6 +50,8 @@ void postorder
   print(root->data);
 }
 take a vector and instead of printing put it in vector and then return the vector
+vectr<int>ans;
+ans.push_back(root->val);
 
 
 <h3>LEVEL ORDER TRAVERSAL ONE OF THE IMP</h3>
@@ -120,5 +122,21 @@ int findheight(TreeNode * root)
         else return 1;
     }
 
+<h3>DIAMETER OF TREE</h3>
+int findheight(TreeNode* root ,int &maxi)
+{
+ if(root==NULL)return 0;
+ int left=findheight(root->left,maxi);
+ int right=findheight(root->right,maxi);
+ maxi=max(maxi,left+right);
+ return 1+max(left,right);
+ }
+ 
+ int diameterOfBinaryTree(TreeNode* root) {
+        int diameter = 0;
+        findheight(root,diameter);
+        return diameter;
+        
+    }
 
 
