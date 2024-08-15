@@ -360,6 +360,33 @@ vector<int> pathInATree(TreeNode<int> *root, int x)
         paths(root,ans,ds);
         return ans;
     }
-  
+<h3>LOWEST COMMON ANCESTOR</h3>
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(root==NULL || root==p ||root==q)return root;
+        TreeNode* left =lowestCommonAncestor(root->left,p,q);
+        TreeNode* right =lowestCommonAncestor(root->right,p,q);
+        if(left==NULL)return right;
+        if(right==NULL)return left;
+        else return root;
+    }
+<H3>CHILD SUM PROPERTY</H3>
+void changeTree(BinaryTreeNode < int > * root) {
+    if(root==NULL)return;
+    int child=0;
+    if(root->left)child+=root->left->data;
+    if(root->right)child+=root->right->data;
+    if(child>=root->data) root->data=child;
+    else
+    {
+        if(root->left) root->left->data=root->data;
+        if(root->right) root->right->data=root->data;
+    }
+    changeTree(root->left);
+    changeTree(root->right);
+    int tot=0;
+    if(root->left) tot+=root->left->data;
+    if(root->right)tot+=root->right->data;
+    if(root->left || root->right) root->data=tot;
+}  
 
 
