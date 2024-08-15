@@ -325,6 +325,41 @@ vector<int>topview(TreeNode*root)
         if(root==NULL)return NULL;
         return isSymmetricHelp(root->left, root->right);
     }
+ <h3>ROOT TO NODE PATH</h3>
+ bool path (TreeNode<int>* root ,vector<int>&ans ,int x)
+{
+	if(root==NULL)return false ;
+	ans.push_back(root->data);
+	if(root->data==x)return true ;
+	if(path(root->left,ans,x)||path(root->right,ans,x)) return true;
+	ans.pop_back();
+	return false;
+}
+vector<int> pathInATree(TreeNode<int> *root, int x)
+{
+    vector<int>ans;
+	path(root,ans,x);
+	return ans;
+}
+<h3>ROOT TO LEAF</h3>
+ void paths(TreeNode*root,vector<string>&ans,string ds)
+    {
+        if(root==NULL)return ;
+        ds+=to_string(root->val);
+        if(root->left==NULL &&root->right==NULL)
+        {
+            ans.push_back(ds);
+        }
+        paths(root->left,ans,ds+"->");
+        paths(root->right,ans,ds+"->");
+        ds.pop_back();
+    }
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string>ans;
+        string ds="";
+        paths(root,ans,ds);
+        return ans;
+    }
   
 
 
