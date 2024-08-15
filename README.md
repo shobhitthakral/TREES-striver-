@@ -388,5 +388,6 @@ void changeTree(BinaryTreeNode < int > * root) {
     if(root->right)tot+=root->right->data;
     if(root->left || root->right) root->data=tot;
 }  
+<H3> MAXIMUM WIDTH OF A BINARY TREE</H3>
 
 
